@@ -2,36 +2,57 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
 
   <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png">
+  <link rel="stylesheet" href="style.css">
   
   <title>Frontend Mentor | Age calculator app</title>
 
-  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
-  <style>
-    .attribution { font-size: 11px; text-align: center; }
-    .attribution a { color: hsl(228, 45%, 44%); }
-  </style>
 </head>
 <body>
 
-  Day
-  DD
+  <div class="container">
 
-  Month
-  MM
+    <div class="inputs">
+      <div>
+      <label for="day" >DAY</label>
+      <input type="text" placeholder="DD" id="day" name="day" >
+      <div id="errorDay" class="campo_invalido"></div>
+      </div>
+      <div>
+      <label for="month">MONTH</label>
+      <input type="text" placeholder="MM" id="month" name="month">
+      <div id="errorMonth" class="campo_invalido"></div>
+      </div>
+      <div>
+      <label for="year">YEAR</label>
+      <input type="text" placeholder="YYYY" id="year" name="year">
+      <div id="errorYear" class="campo_invalido"></div>
+      </div>
+      
+    </div>
+    <hr>
+    <button type="submit" id="send"></button>
+    <div class="salida">
+      <div>
+        <h1 class="dataY">--</h1><h1>Years</h1>
+      </div>
+      <div>
+        <h1 class="dataM">--</h1><h1>Months</h1>
+      </div>
+      <div>
+        <h1 class="dataD">--</h1><h1>Days</h1>
+      </div>
+      
+    </div>
+  </div>
 
-  Year
-  YYYY
-
-  -- years
-  -- months
-  -- days
-  
   <div class="attribution">
     Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
-    Coded by <a href="#">Your Name Here</a>.
+    Coded by <a href="#">Jean Melgar</a>.
   </div>
+
+  <script src="./index.js"></script>
 </body>
 </html>

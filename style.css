@@ -1,0 +1,172 @@
+/*IMPORTS*/
+@font-face {
+  font-family: 'Poppins';
+  src: url('./assets/fonts/Poppins-Bold.ttf') format('truetype');
+  font-style: normal;
+  font-weight:700;
+
+}
+
+@font-face {
+  font-family: 'Poppins';
+  src: url('./assets/fonts/Poppins-BoldItalic.ttf') format('truetype');
+  font-style: italic;
+  font-weight:700;
+
+}
+
+@font-face {
+  font-family: 'Poppins';
+  src: url('./assets/fonts/Poppins-ExtraBold.ttf') format('truetype');
+  font-style: normal;
+  font-weight:800;
+
+}
+
+@font-face {
+  font-family: 'Poppins';
+  src: url('./assets/fonts/Poppins-ExtraBoldItalic.ttf') format('truetype');
+  font-style: italic;
+  font-weight:800;
+
+}
+
+@font-face {
+  font-family: 'Poppins';
+  src: url('./assets/fonts/Poppins-Italic.ttf') format('truetype');
+  font-style: italic;
+  font-weight:400;
+
+}
+
+@font-face {
+  font-family: 'Poppins';
+  src: url('./assets/fonts/Poppins-Regular.ttf') format('truetype');
+  font-style: normal;
+  font-weight:400;
+
+}
+
+
+/*VARIABLES GLOBALES */
+
+
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins';
+}
+
+body{
+  background-color: #d7d7d7;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.container{
+  background-color: #Ffff;
+  width: 60%;
+  height: 90%;  
+  border-radius: 0 0 30% 0;
+  padding: 50px;
+  position: relative;
+}
+
+label{
+  letter-spacing: 0.5em;
+  font-weight:700;
+  color: #a5a5a5;
+  display: block;
+  margin: 0 5px 0 0;
+}
+
+
+::placeholder{
+  font-weight: 800;
+  padding: 5px;
+  font-size:30px;
+  text-align: center;
+  line-height:100%;
+}
+input{
+  display: block;
+  width: 80%;
+  height: 60px;
+  border: 0.8px solid #cccccc;
+  border-radius: 5px;
+  text-align: center;
+}
+.inputs{
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  width: 100%;
+  
+  
+}
+
+.inputs div {
+  padding: 8px;
+  margin-bottom: 40px;
+}
+
+hr{
+  border: 0.5px solid #ccc;
+}
+
+h1{
+  display: inline-block;
+  font-size:70px;
+  font-weight: 800;
+  font-style: italic;
+}
+.dataY,.dataM,.dataD{
+  display: inline-block;
+  color:#864CFF;
+  letter-spacing: 0.2em;
+}
+#send{
+  display:block;
+  position: absolute;
+  width:75px;
+  height: 75px;
+  background-color: black;
+  border-radius: 50%;
+  right: 0;
+  transform: translateY(-50%);
+  transform: rotateX(-50px);
+  margin-right: 80px;
+  background-color: #864CFF;
+  background-image: url(./assets/images/icon-arrow.svg);
+  background-repeat: no-repeat;
+  background-position:center;
+  border: none;
+  cursor: pointer;
+}
+
+#send:hover{
+  background-color: #40257a;
+}
+
+.campo_invalido{
+  color: red;
+  justify-self: flex-end;
+  border-color: red;
+}
+
+#errorYear,#errorMonth,#errorDay{
+  text-align: center;
+  font-size:9px;
+  margin: 0;
+
+}
+
+.attribution{
+
+  padding: 10px;
+}
