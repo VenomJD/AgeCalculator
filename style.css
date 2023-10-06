@@ -105,8 +105,14 @@ input{
   display: flex;
   justify-content: flex-start;
   align-items: center;
-  width: 100%;
+  width: 80%;
   
+}
+
+#day,#month,#year {
+  font-weight: 800;
+  font-size:30px;
+  text-align: center;
   
 }
 
@@ -121,7 +127,7 @@ hr{
 
 h1{
   display: inline-block;
-  font-size:70px;
+  font-size:60px;
   font-weight: 800;
   font-style: italic;
 }
@@ -139,7 +145,6 @@ h1{
   border-radius: 50%;
   right: 0;
   transform: translateY(-50%);
-  transform: rotateX(-50px);
   margin-right: 80px;
   background-color: #864CFF;
   background-image: url(./assets/images/icon-arrow.svg);
@@ -163,10 +168,70 @@ h1{
   text-align: center;
   font-size:9px;
   margin: 0;
+  height:40px;
+  opacity: 0;
 
+}
+
+.salida{
+  margin-top:40px;
 }
 
 .attribution{
 
   padding: 10px;
+}
+
+.input-group{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items:flex-start;
+}
+
+@media (max-width: 813px) {
+    
+
+  .container{
+    width: 80%;
+    height: 60%;
+  }
+
+  .salida{
+    margin-top:40px;
+  }
+  h1{
+    font-size:50px;
+  }
+  #send{
+    right: 0;
+    transform: translateY(-50%);
+    transform: translateX(-100px);
+    top: 33%;
+
+  }
+
+  .input-group{
+    width: 100%;
+  }
+
+  #day,#month,#year{
+    width: 100%;
+    font-size: 20px;
+  }
+
+  ::placeholder{
+    font-size: 20px;
+  }
+
+  label{
+    font-size: 15px;
+    letter-spacing:0.3em;
+  }
+  .inputs{
+    width: 100%;
+  }
+  .attribution{
+    margin-top:50px;
+  }
 }

@@ -15,20 +15,20 @@
   <div class="container">
 
     <div class="inputs">
-      <div>
-      <label for="day" >DAY</label>
-      <input type="text" placeholder="DD" id="day" name="day" >
-      <div id="errorDay" class="campo_invalido"></div>
+      <div class="input-group">
+      <label for="day" id="labelDay">DAY</label>
+      <input type="number" placeholder="DD" id="day" name="day" required >
+      <div id="errorDay" class="campo_invalido">day</div>
       </div>
-      <div>
-      <label for="month">MONTH</label>
-      <input type="text" placeholder="MM" id="month" name="month">
-      <div id="errorMonth" class="campo_invalido"></div>
+      <div class="input-group">
+      <label for="month" id="labelMonth" >MONTH</label>
+      <input type="number" placeholder="MM" id="month" name="month"  required>
+      <div id="errorMonth" class="campo_invalido">month</div>
       </div>
-      <div>
-      <label for="year">YEAR</label>
-      <input type="text" placeholder="YYYY" id="year" name="year">
-      <div id="errorYear" class="campo_invalido"></div>
+      <div class="input-group">
+      <label for="year" id="labelYear">YEAR</label>
+      <input type="number" placeholder="YYYY" id="year" name="year"  required>
+      <div id="errorYear" class="campo_invalido">year</div>
       </div>
       
     </div>

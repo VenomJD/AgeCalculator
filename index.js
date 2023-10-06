@@ -7,6 +7,10 @@ document.getElementById("send").addEventListener("click", function(){
   var monthInput = document.getElementById("month");
   var yearInput = document.getElementById("year");
 
+  var labelDay = document.getElementById("labelDay");
+  var labelMonth = document.getElementById("labelMonth");
+  var labelYear = document.getElementById("labelYear");
+
   var dayValue = document.getElementById("day").value.trim();  
   var monthValue = document.getElementById("month").value.trim();
   var yearValue = document.getElementById("year").value.trim();
@@ -17,66 +21,72 @@ document.getElementById("send").addEventListener("click", function(){
 
   // Verificar si los campos están vacíos
   if (dayValue === "") {
+    errorDay.style.opacity = "1";
     errorDay.textContent = "This field is required";
-    errorDay.style.display = "block";
     dayInput.classList.add("campo_invalido");
     labelDay.style.color = "red";
   } else {
-    errorDay.style.display = "none";
+    errorDay.style.opacity = "0";
     dayInput.classList.remove("campo_invalido");
     labelDay.style.color = "";
   }
 
   if (monthValue === "") {
     errorMonth.textContent = "This field is required";
-    errorMonth.style.display = "block";
+    errorMonth.style.opacity = "1";
     monthInput.classList.add("campo_invalido");
-    labelDay.style.color = "red";
+    labelMonth.style.color = "red";
     
 
   } else {
-    errorMonth.style.display = "none";
+    errorMonth.style.opacity = "0";
     monthInput.classList.remove("campo_invalido");
-    labelDay.style.color = "";
+    labelMonth.style.color = "";
   }
 
   if (yearValue === "") {
     errorYear.textContent = "This field is required";
-    errorYear.style.display = "block";
-    yearInputInput.classList.add("campo_invalido");
-    labelDay.style.color = "red";
+    errorYear.style.opacity = "1";
+    yearInput.classList.add("campo_invalido");
+    labelYear.style.color = "red";
 
   } else {
-    errorYear.style.display = "none";
+    errorYear.style.opacity = "0";
     yearInput.classList.remove("campo_invalido");
-    labelDay.style.color = "";
+    labelYear.style.color = "";
   }
 
   // Si los campos no están vacíos, realizar validaciones adicionales
-  if (errorDay.style.display === "none" && errorMonth.style.display === "none" && errorYear.style.display === "none") {
+  if (errorDay.style.opacity === "0" && errorMonth.style.opacity === "0" && errorYear.style.opacity === "0") {
     var fechaNacimiento = new Date(parseInt(yearValue), parseInt(monthValue) - 1, parseInt(dayValue));
 
     // Validar día
     if (parseInt(dayValue) < 1 || parseInt(dayValue) > 31) {
       errorDay.textContent = "Must be a valid day";
-      errorDay.style.display = "block";
+      errorDay.style.opacity = "1";
+      dayInput.classList.add("campo_invalido");
+      labelDay.style.color = "red";
     }
 
     // Validar mes
     if (parseInt(monthValue) < 1 || parseInt(monthValue) > 12) {
       errorMonth.textContent = "Must be a valid month";
-      errorMonth.style.display = "block";
+      errorMonth.style.opacity = "1";
+      monthInput.classList.add("campo_invalido");
+      labelMonth.style.color = "red";
     }
 
     // Validar año
     var añoActual = new Date().getFullYear();
-    if (parseInt(yearValue) > añoActual || parseInt(yearValue) < (añoActual - 120)) {
+    if (parseInt(yearValue) > añoActual || parseInt(yearValue) < (añoActual - 120) || parseInt(yearValue) === (añoActual-1)) {
       errorYear.textContent = "Must be in the past";
-      errorYear.style.display = "block";
+      errorYear.style.opacity = "1";
+      yearInput.classList.add("campo_invalido");
+      labelYear.style.color = "red";
     }
 
     // Si no hay errores, calcular edad
-    if (errorDay.style.display === "none" && errorMonth.style.display === "none" && errorYear.style.display === "none") {
+    if (errorDay.style.opacity === "0" && errorMonth.style.opacity === "0" && errorYear.style.opacity === "0") {
       var edad = calcularEdad(fechaNacimiento);
       dataY.textContent = edad.anios;
       dataM.textContent = edad.meses;
